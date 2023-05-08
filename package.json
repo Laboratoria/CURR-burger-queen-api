@@ -17,10 +17,12 @@
     "docs:deploy": "rm -rf docs && npm run docs:generate && gh-pages -d docs"
   },
   "dependencies": {
+    "@shelf/jest-mongodb": "^4.1.7",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1"
+    "jsonwebtoken": "^8.5.1",
+    "mongodb-memory-server": "^8.12.2"
   },
   "devDependencies": {
     "docdash": "^1.2.0",
@@ -35,8 +37,8 @@
     "tree-kill": "^1.2.2"
   },
   "bootcamp": {
-    "createdAt": "2023-05-05T22:04:13.962Z",
+    "createdAt": "2023-05-08T19:29:01.989Z",
     "version": "6.2.0",
-    "commit": "13ee9737da6b539b709dcbbc39e8a3fde2af83f8"
+    "commit": "59943a4d78356b0e8f7634b42ae9ad84f8366bd5"
   }
 }

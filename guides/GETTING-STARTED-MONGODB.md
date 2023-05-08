@@ -17,7 +17,7 @@ Para ello te recomendamos seguir los pasos a continuación:
 * [2. Levanta el base de datos y server](#2-levanta-el-base-de-datos-y-server)
 * [3. Elegir módulo (cliente)](#3-elegir-módulo-cliente)
 * [4. Definir esquemas](#4-definir-esquemas)
-* [5. Implementar los primeros TODOs](#5-codigar-los-primeros-todos)
+* [5. Implementar los primeros TODOs](#5-implementar-los-primeros-todos)
 * [6. Definir estrategia de pruebas unitarias](#6-definir-estrategia-de-pruebas-unitarias)
 * [7. Familiarizarte con las pruebas de integración (e2e)](#7-familiarizarte-con-las-pruebas-de-integración-e2e)
 
@@ -67,11 +67,6 @@ módulo o librería diseñado para interactuar con nuestra base de datos desde
 Node.js. Existen un montón de opciones, pero para este proyecto te recomendamos
 usar el [Node driver de MongoDB](https://www.mongodb.com/docs/drivers/node/current/)
  (lo mas directo interactuar con MongoDB).
-
-También hay opciones mas abstractas como [Mongoose](https://mongoosejs.com/)
-(que es muy popular para MongoDB) o [Prisma](https://www.prisma.io/),
-pero si estas empezando con el mundo backend es mejor entender como interactuar
-con el base de datos con el driver.
 
 Hay que instalar el Node Driver en este proyecto usando `npm`.
 
@@ -256,15 +251,9 @@ esta instancia (por defecto `http://127.0.0.1:8080`). Esto asume que la base de
 datos está disponible.
 
 Los pruebas e2e depende en codigo de (`globalSetup.js`)[../e2e/globalSetup.js]
-que `jest` sabe correr primero antes de los tests.
-En este paso de setup, hay que levantar un mock db (como hemos hablado de
+que `jest` sabe correr primero, antes de los tests.
+En este paso de setup, levantamos un mock db (como hemos hablado de
 [`mongodb-memory-server`](https://github.com/nodkz/mongodb-memory-server))
-y hacer que jest se conecta a este mock db.
+y jest se conecta a este mock db.
 
-Para este configuracion - hay que instalar `mongodb-memory-server` y un preset (`jest-mongodb`)[https://github.com/shelfio/jest-mongodb].
-
-El patrón de setup no es tan directo y documentado, porque `jest-mongodb`
-tambien usa su propio `globalSetup` y los dos no juegan bien en conjunto.
-Hemos agregado este codigo para configurar los e2e tests y `globalSetup`
-en un patch (`usando git diff`) que puedes aplicar automaticamente con
-`git apply ./mongoDB-e2e.patch`.
+Para este configuracion - usamos `mongodb-memory-server` y un preset (`jest-mongodb`)[https://github.com/shelfio/jest-mongodb].
